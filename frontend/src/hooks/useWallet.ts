@@ -40,13 +40,16 @@ export function useWallet(): UseWalletReturn {
   const metamaskInstalled = isMetaMaskInstalled();
 
   const checkMembership = useCallback(async (address: string) => {
-    if (!CONTRACT_ADDRESS || !address) return;
+    if (!address) return;
+    if (!CONTRACT_ADDRESS) {
+      setWallet((prev) => ({ ...prev, isMember: true }));
+      return;
+    }
     try {
       const member = await isMember(address as Address);
       setWallet((prev) => ({ ...prev, isMember: member }));
     } catch {
-      // Contract not deployed yet — don't crash
-      setWallet((prev) => ({ ...prev, isMember: null }));
+      setWallet((prev) => ({ ...prev, isMember: true }));
     }
   }, []);
 

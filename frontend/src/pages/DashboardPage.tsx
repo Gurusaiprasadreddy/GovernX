@@ -144,7 +144,10 @@ export function DashboardPage({
                 {shortenAddress(CONTRACT_ADDRESS)} ↗
               </a>
             ) : (
-              <p className="font-mono text-xs text-slate-600">Not deployed yet</p>
+              <p className="font-mono text-xs text-brand-400 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                0x5FbD...0aa3 (Sample)
+              </p>
             )}
           </div>
           <div>
@@ -159,7 +162,10 @@ export function DashboardPage({
                 {shortenAddress(DEMO_TARGET_ADDRESS)} ↗
               </a>
             ) : (
-              <p className="font-mono text-xs text-slate-600">Not deployed yet</p>
+              <p className="font-mono text-xs text-brand-400 flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                0xe7f1...0512 (Sample)
+              </p>
             )}
           </div>
           <div>

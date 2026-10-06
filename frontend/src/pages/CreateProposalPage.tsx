@@ -72,7 +72,7 @@ export function CreateProposalPage({
     try {
       const encoded = encodeDemoUpdateValue(val);
       setCalldata(encoded);
-      setTarget(DEMO_TARGET_ADDRESS ?? "");
+      setTarget(DEMO_TARGET_ADDRESS || "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512");
       toast.success("Demo calldata applied!");
     } catch {
       toast.error("Failed to encode calldata.");
